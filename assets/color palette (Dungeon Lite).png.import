@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2pp8cryji2ae"
-path="res://.godot/imported/color palette (Dungeon Lite).png-ca0b183f64b54349ecabcc12bdd89ee5.ctex"
+path="res://.godot/imported/color palette (Dungeon Lite).png-c980a500444956bb55854b3273b6ff34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/color palette (Dungeon Lite).png"
-dest_files=["res://.godot/imported/color palette (Dungeon Lite).png-ca0b183f64b54349ecabcc12bdd89ee5.ctex"]
+source_file="res://assets/color palette (Dungeon Lite).png"
+dest_files=["res://.godot/imported/color palette (Dungeon Lite).png-c980a500444956bb55854b3273b6ff34.ctex"]
 
 [params]
 

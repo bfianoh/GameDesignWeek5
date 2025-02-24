@@ -1,7 +1,9 @@
 extends CharacterBody2D
 class_name Player
+#class_name Enemy
 
 var player_projectile = preload("res://scenes/player_projectile.tscn")
+var enemy_scene = preload("res://Scenes/Enemies/EnemyOne.tscn")
 
 @export var move_speed = 150.0
 @export var projectile_speed = 400
@@ -22,6 +24,7 @@ var ammo: int = 20
 func _ready():
 	is_alive = true
 	health = maxHealth
+	spawn_enemy()
 
 func _physics_process(delta: float) -> void:
 	if is_alive:
@@ -87,3 +90,7 @@ func die():
 	get_tree().paused = true
 	# Instantiate Death Screen (Add Later)
 	
+func spawn_enemy():
+	var enemy = enemy_scene.instantiate()  # Create instance of EnemyOne
+	enemy.position = Vector2(100, 200)  # Adjust position as needed
+	get_parent().add_child(enemy)  # Add enemy to the room (TreasureRoom1)

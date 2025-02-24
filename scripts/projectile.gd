@@ -1,5 +1,5 @@
 extends Area2D
-class_name Projectile
+#class_name Projectile
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 

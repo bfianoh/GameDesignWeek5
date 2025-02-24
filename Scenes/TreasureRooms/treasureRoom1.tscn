@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://ba4lhhty16vwf"]
+[gd_scene load_steps=7 format=4 uid="uid://ba4lhhty16vwf"]
 
-[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_uf3fm"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_wcrcd"]
+[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://assets/tileset x1.png" id="1_uf3fm"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_wcrcd"]
+[ext_resource type="PackedScene" uid="uid://cwa4pfelcafvg" path="res://Scenes/player.tscn" id="3_8gvqa"]
+[ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Scenes/Enemies/EnemyOne.tscn" id="3_uepkp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_uf3fm")
@@ -1409,3 +1411,7 @@ y_sort_origin = 5
 
 [node name="PropTileMap" parent="." instance=ExtResource("2_wcrcd")]
 tile_map_data = PackedByteArray("AAD///3/AAAWAAwAAAD///7/AAAYAAwAAAACAP3/AAAWAAwAAAACAP7/AAAYAAwAAAAFAPv/AAACAAAAAAD8//v/AAAGABAAAAA=")
+
+[node name="Player" parent="." instance=ExtResource("3_8gvqa")]
+
+[node name="EnemyOne" parent="." instance=ExtResource("3_uepkp")]
