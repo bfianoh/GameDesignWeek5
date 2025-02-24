@@ -87,3 +87,5 @@ func die():
 	get_tree().paused = true
 	# Instantiate Death Screen (Add Later)
 	
+func shop():
+	pass

@@ -1,0 +1,165 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0l0l8ucovhks"]
+
+[ext_resource type="Script" path="res://scripts/shopMenu.gd" id="1_86jcf"]
+[ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://Assets/PixelOperator8.ttf" id="1_e1y0x"]
+[ext_resource type="Texture2D" uid="uid://c4sbve2axamti" path="res://Assets/Props and Items/props and items x1.png" id="2_tiwaj"]
+[ext_resource type="PackedScene" uid="uid://darduropjv8ns" path="res://scenes/PickUps/ammo.tscn" id="5_4jrfy"]
+[ext_resource type="PackedScene" uid="uid://b7fr2fvifvenv" path="res://scenes/PickUps/healthPack.tscn" id="6_ohder"]
+[ext_resource type="PackedScene" uid="uid://dngqsu5jpeh5h" path="res://scenes/PickUps/weaponDamageUpgrade.tscn" id="7_fy7xd"]
+[ext_resource type="PackedScene" uid="uid://b42kavcsclhng" path="res://scenes/PickUps/weaponSpeedUpgrade.tscn" id="8_7ehkp"]
+
+[node name="ShopMenu" type="StaticBody2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_86jcf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 10
+offset_left = -28.0
+offset_top = -23.0
+offset_right = 26.0
+offset_bottom = 21.0
+color = Color(0.160784, 0.211765, 0.435294, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -30.0
+offset_top = -25.0
+offset_right = 28.0
+offset_bottom = 23.0
+color = Color(0.101961, 0.109804, 0.172549, 1)
+
+[node name="HealthPackButton" type="Button" parent="."]
+z_index = 10
+offset_left = -24.0
+offset_right = -4.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="HealthPackButton"]
+position = Vector2(10, 5)
+texture = ExtResource("2_tiwaj")
+region_enabled = true
+region_rect = Rect2(203.434, 201.623, 9.3363, 7.98499)
+
+[node name="Label" type="Label" parent="HealthPackButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "15
+"
+
+[node name="AmmoButton" type="Button" parent="."]
+z_index = 10
+offset_left = 2.0
+offset_right = 22.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="AmmoButton"]
+position = Vector2(10, 5)
+texture = ExtResource("2_tiwaj")
+region_enabled = true
+region_rect = Rect2(299.755, 201.623, 7.89993, 8.37697)
+
+[node name="Label" type="Label" parent="AmmoButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "10
+"
+
+[node name="WeaponDamageButton" type="Button" parent="."]
+z_index = 10
+offset_left = 2.0
+offset_top = -21.0
+offset_right = 22.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponDamageButton"]
+position = Vector2(10, 5)
+texture = ExtResource("2_tiwaj")
+region_enabled = true
+region_rect = Rect2(203.524, 263.544, 9.04594, 10.1627)
+
+[node name="Label" type="Label" parent="WeaponDamageButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "20"
+
+[node name="WeaponSpeedButton" type="Button" parent="."]
+z_index = 10
+offset_left = -24.0
+offset_top = -21.0
+offset_right = -4.0
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponSpeedButton"]
+position = Vector2(10, 5)
+texture = ExtResource("2_tiwaj")
+region_enabled = true
+region_rect = Rect2(300.012, 264.569, 8.00916, 8.61938)
+
+[node name="Label" type="Label" parent="WeaponSpeedButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("1_e1y0x")
+theme_override_font_sizes/font_size = 8
+text = "20"
+
+[node name="Ammo" parent="." instance=ExtResource("5_4jrfy")]
+visible = false
+position = Vector2(-37, 41)
+collision_layer = 129
+collision_mask = 128
+
+[node name="HealthPack" parent="." instance=ExtResource("6_ohder")]
+visible = false
+position = Vector2(21, 40)
+collision_layer = 128
+collision_mask = 128
+
+[node name="WeaponDamageUpgrade" parent="." instance=ExtResource("7_fy7xd")]
+visible = false
+position = Vector2(46, 38)
+collision_layer = 128
+collision_mask = 128
+
+[node name="WeaponSpeedUpgrade" parent="." instance=ExtResource("8_7ehkp")]
+visible = false
+position = Vector2(88, 37)
+collision_layer = 128
+collision_mask = 128
+
+[connection signal="pressed" from="HealthPackButton" to="." method="_on_health_pack_button_pressed"]
+[connection signal="pressed" from="AmmoButton" to="." method="_on_ammo_button_pressed"]
+[connection signal="pressed" from="WeaponDamageButton" to="." method="_on_weapon_damage_button_pressed"]
+[connection signal="pressed" from="WeaponSpeedButton" to="." method="_on_weapon_speed_button_pressed"]
