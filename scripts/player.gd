@@ -58,7 +58,7 @@ func shoot():
 	%Sprite.play("shoot")
 	
 	var projectile = player_projectile.instantiate()
-	projectile.position = position + Vector2(0,5)
+	projectile.position = position + Vector2(0,6)
 	projectile.direction = facing_dir
 	projectile.speed = projectile_speed
 	projectile.damage = damage
