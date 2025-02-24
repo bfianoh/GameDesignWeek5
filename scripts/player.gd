@@ -62,6 +62,7 @@ func shoot():
 	projectile.direction = facing_dir
 	projectile.speed = projectile_speed
 	projectile.damage = damage
+	projectile.source = "Player"
 	get_parent().add_child(projectile)
 	
 	await %Sprite.animation_finished
@@ -69,7 +70,7 @@ func shoot():
 
 func take_damage(value: int):
 	health -= value
-	health_ui_label_node.text = str(health) #EDIT LATER
+	# health_ui_label_node.text = str(health) #EDIT LATER
 	if health <= 0:
 		die()
 
