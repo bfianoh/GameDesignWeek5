@@ -5,5 +5,6 @@ func _on_body_entered(body: Node2D) -> void:
 	purchase(body)
 
 func purchase(body):
-	#[INCREASE PLAYER WEAPON STRENGTH]
+	body.damage += 5
+	print(body.damage)
 	queue_free()

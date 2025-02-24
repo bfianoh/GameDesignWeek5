@@ -1,13 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://b42kavcsclhng"]
 
 [ext_resource type="Texture2D" uid="uid://c4sbve2axamti" path="res://Assets/Props and Items/props and items x1.png" id="1_452f0"]
-[ext_resource type="Script" path="res://Scripts/weaponRangeUpgrade.gd" id="1_d7euc"]
+
+[sub_resource type="GDScript" id="GDScript_p7djj"]
+script/source = "extends Area2D
+
+#if player collides with weapon speed upgrade increase projectile speed
+func _on_body_entered(body: Node2D) -> void:
+	purchase(body)
+	
+func purchase(body):
+	#make sure that projectile speed doesn't get too high
+	if body.projectile_speed < 600:
+		body.projectile_speed += 10
+		print(body.projectile_speed)
+	queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueh2b"]
 size = Vector2(8, 8)
 
-[node name="WeaponRangeUpgrade" type="Area2D"]
-script = ExtResource("1_d7euc")
+[node name="WeaponSpeedUpgrade" type="Area2D"]
+script = SubResource("GDScript_p7djj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_452f0")
@@ -17,3 +31,5 @@ region_rect = Rect2(299.956, 264.95, 8.14169, 12.0963)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_ueh2b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -5,5 +5,6 @@ func _on_body_entered(body: Node2D) -> void:
 	purchase(body)
 	
 func purchase(body):
-	#[INCREASE PLAYER COIN COUNTER]
+	body.coin_count += 5
+	print(body.coin_count)
 	queue_free()

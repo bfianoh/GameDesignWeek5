@@ -5,5 +5,6 @@ func _on_body_entered(body: Node2D) -> void:
 	purchase(body)
 
 func purchase(body):
-	#[INCREASE PLAYER HEALTH]
+	body.health += 20
+	print(body.health)
 	queue_free()

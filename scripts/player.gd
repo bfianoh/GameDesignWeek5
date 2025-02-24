@@ -16,6 +16,8 @@ var facing_dir: Vector2 = Vector2.RIGHT
 var health: int = maxHealth
 var is_shooting: bool = false
 var is_alive: bool = true
+var coin_count: int = 0
+var ammo: int = 20
 
 func _ready():
 	is_alive = true
@@ -54,6 +56,10 @@ func _physics_process(delta: float) -> void:
 				shoot()
 
 func shoot():
+	if ammo == 0:
+		return
+	
+	ammo -= 1
 	is_shooting = true
 	%Sprite.play("shoot")
 	
