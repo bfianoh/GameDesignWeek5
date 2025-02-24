@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cwa4pfelcafvg"]
+[gd_scene load_steps=21 format=3 uid="uid://cwa4pfelcafvg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dp4p8"]
 [ext_resource type="Texture2D" uid="uid://b6m1p5g57nmov" path="res://assets/Players/players blue x1.png" id="1_j8i46"]
@@ -51,23 +51,19 @@ region = Rect2(64, 96, 32, 32)
 atlas = ExtResource("1_j8i46")
 region = Rect2(96, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_syfym"]
-atlas = ExtResource("1_j8i46")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3fi2w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5345y"]
 atlas = ExtResource("1_j8i46")
 region = Rect2(0, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5oc8u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwjt0"]
 atlas = ExtResource("1_j8i46")
 region = Rect2(32, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_trlpn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxyb2"]
 atlas = ExtResource("1_j8i46")
 region = Rect2(64, 128, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_trc6o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3kas"]
 atlas = ExtResource("1_j8i46")
 region = Rect2(96, 128, 32, 32)
 
@@ -95,7 +91,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rqic3")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -126,23 +122,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_syfym")
+"texture": SubResource("AtlasTexture_5345y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3fi2w")
+"texture": SubResource("AtlasTexture_dwjt0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5oc8u")
+"texture": SubResource("AtlasTexture_lxyb2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_trlpn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_trc6o")
+"texture": SubResource("AtlasTexture_t3kas")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie0tj"]
@@ -154,6 +147,7 @@ script = ExtResource("1_dp4p8")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+z_index = 20
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_dq5py")
 animation = &"idle"
