@@ -90,7 +90,5 @@ func die():
 	get_tree().paused = true
 	# Instantiate Death Screen (Add Later)
 	
-func spawn_enemy():
-	var enemy = enemy_scene.instantiate()  # Create instance of EnemyOne
-	enemy.position = Vector2(100, 200)  # Adjust position as needed
-	get_parent().add_child(enemy)  # Add enemy to the room (TreasureRoom1)
+func shop():
+	pass
