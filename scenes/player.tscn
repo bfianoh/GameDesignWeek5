@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwa4pfelcafvg"]
+[gd_scene load_steps=24 format=3 uid="uid://cwa4pfelcafvg"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_dp4p8"]
 [ext_resource type="Texture2D" uid="uid://b6m1p5g57nmov" path="res://assets/Players/players blue x1.png" id="1_j8i46"]
@@ -30,6 +30,18 @@ region = Rect2(160, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqic3"]
 atlas = ExtResource("1_j8i46")
 region = Rect2(192, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_344td"]
+atlas = ExtResource("1_j8i46")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlg67"]
+atlas = ExtResource("1_j8i46")
+region = Rect2(160, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3yjm"]
+atlas = ExtResource("1_j8i46")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vub6c"]
 atlas = ExtResource("1_j8i46")
@@ -97,6 +109,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_344td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlg67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3yjm")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vub6c")
 }],
 "loop": true,
@@ -150,7 +176,7 @@ unique_name_in_owner = true
 z_index = 20
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_dq5py")
-animation = &"run"
+animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
