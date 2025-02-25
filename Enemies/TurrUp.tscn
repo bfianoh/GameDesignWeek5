@@ -90,7 +90,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ojk2l")
 }],
-"loop": true,
+"loop": false,
 "name": &"active",
 "speed": 5.0
 }, {
@@ -147,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_imuhi")
 }],
-"loop": true,
+"loop": false,
 "name": &"shoot",
 "speed": 5.0
 }]
@@ -160,7 +160,7 @@ script = ExtResource("1_1n7pa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gwsst")
-animation = &"death"
+animation = &"shoot"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

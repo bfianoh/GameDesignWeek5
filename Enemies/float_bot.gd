@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name FloatBot
 
 @export var health: int = 4  # health
 @export var fire_rate: float = 2.0  # time b/w shots
@@ -23,7 +24,7 @@ func shoot():
 	projectile.direction = Vector2.RIGHT 
 	projectile.speed = 300 
 	projectile.damage = 5
-
+	projectile.source = "FloatBot"
 	get_parent().add_child(projectile)
 
 	await sprite.animation_finished

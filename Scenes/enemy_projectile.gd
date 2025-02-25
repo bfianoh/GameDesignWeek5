@@ -6,7 +6,7 @@ extends Area2D
 var speed = 400
 var direction = Vector2.RIGHT
 var damage = 1
-var source: String = "Enemy"
+var source: String
 
 func _ready() -> void:
 	sprite.play("default")
@@ -24,8 +24,9 @@ func rotate_sprite():
 # SIGNALS
 
 func _on_body_entered(body: Node2D) -> void:
-	if source == "Enemy" and body is Player:
+	if source == "FloatBot" and body is FloatBot:
 		return
+	# Add similar check for each enemy
 	
 	if body.has_method("take_damage"):
 		body.take_damage(damage)

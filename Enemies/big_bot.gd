@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name BigBot
 
 @export var move_speed = 50.0
 @export var health = 30

@@ -1,5 +1,5 @@
 extends Area2D
-#class_name Projectile
+class_name ProjectileClass
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 
@@ -25,6 +25,8 @@ func rotate_sprite():
 
 func _on_body_entered(body: Node2D) -> void:
 	if source == "Player" and body is Player:
+		return
+	if source == "FloatBot" and body is FloatBot:
 		return
 	
 	if body.has_method("take_damage"):
