@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://dfs87wlyv8yrx"]
 
-[ext_resource type="Script" path="res://Scenes/Enemies/turrUp.gd" id="1_1n7pa"]
+[ext_resource type="Script" path="res://Enemies/turrUp.gd" id="1_1n7pa"]
 [ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="2_256i0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wedd3"]
