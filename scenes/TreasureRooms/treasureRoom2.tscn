@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://cyt0venvr1nge"]
+[gd_scene load_steps=7 format=4 uid="uid://cyt0venvr1nge"]
 
 [ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="1_jyor0"]
+[ext_resource type="Script" path="res://scripts/treasureRoom.gd" id="1_tdvxb"]
 [ext_resource type="PackedScene" uid="uid://cok3i1mn4wssr" path="res://scenes/TileMapMain.tscn" id="2_gyjos"]
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="3_b7qrn"]
 
@@ -1397,7 +1398,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y0uw0")
 
 [node name="TreasureRoom2" type="Node2D"]
-position = Vector2(-15, 26)
+position = Vector2(-15, 54)
+script = ExtResource("1_tdvxb")
+startingY = -30
 
 [node name="Props" parent="." instance=ExtResource("1_jyor0")]
 tile_map_data = PackedByteArray("AAD9//v/AAAaAAwAAAACAPv/AAAaAAwAAAD6//r/AAAUAAQAAAAHAPr/AAAUAAQAAAD7//3/AAAIAAIAAAAGAPz/AAAGAAIAAAD///v/AAAcAAwAAAAEAPv/AAAcAAwAAAA=")

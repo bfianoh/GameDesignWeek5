@@ -21,7 +21,7 @@ func getPlayer():
 
 func _on_health_pack_button_pressed() -> void:
 	getPlayer()
-	if player.coin_count >= 15:
+	if player.coin_count >= 15 and player.health < 100:
 		player.coin_count -= 15
 		healthPack.purchase(player)
 		print("purchased health pack")
@@ -46,7 +46,7 @@ func _on_weapon_damage_button_pressed() -> void:
 
 func _on_weapon_speed_button_pressed() -> void:
 	getPlayer()
-	if player.coin_count >= 20:
+	if player.coin_count >= 20 and player.projectile_speed < 600:
 		player.coin_count -= 20
 		weaponSpeedUpgrade.purchase(player)
 		print("purchased weapon speed upgrade")
