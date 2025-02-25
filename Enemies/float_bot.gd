@@ -23,7 +23,7 @@ func shoot():
 	projectile.position = position + Vector2(10, 0) 
 	projectile.direction = Vector2.RIGHT 
 	projectile.speed = 300 
-	projectile.damage = 5
+	projectile.damage = 25
 	projectile.source = "FloatBot"
 	get_parent().add_child(projectile)
 
