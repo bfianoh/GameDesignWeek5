@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://ba4lhhty16vwf"]
+[gd_scene load_steps=5 format=4 uid="uid://ba4lhhty16vwf"]
 
-[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://assets/tileset x1.png" id="1_uf3fm"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_wcrcd"]
-[ext_resource type="PackedScene" uid="uid://cwa4pfelcafvg" path="res://Scenes/player.tscn" id="3_8gvqa"]
-[ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Enemies/FloatBot.tscn" id="3_uepkp"]
+[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_uf3fm"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_wcrcd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_uf3fm")
@@ -1398,6 +1396,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1f3ih")
 
 [node name="TreasureRoom1" type="Node2D"]
+position = Vector2(-11, 1)
 
 [node name="Walls" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD7//3/AAAEABMAAAD7//n/AAACAAIAAAD7//r/AAACAAMAAAADAPn/AAASAAIAAAADAPr/AAASAAMAAAD8//n/AAADAAIAAAD8//r/AAADAAMAAAD9//n/AAAKAAAAAAD9//r/AAAKAAEAAAD+//n/AAALAAAAAAD+//r/AAALAAEAAAABAPn/AAAKAAAAAAABAPr/AAAKAAEAAAACAPn/AAALAAAAAAACAPr/AAALAAEAAAD///n/AAAMAAAAAAD///r/AAAMAAEAAAAAAPn/AAAJAAAAAAAAAPr/AAAJAAEAAAD7//v/AAACAAUAAAD7/wAAAAAEABMAAAD7/wEAAAAEABQAAAD7/wIAAAAEABUAAAD8/wEAAAAFABQAAAD8/wIAAAAFABUAAAD9/wEAAAAKABQAAAD9/wIAAAAKABUAAAD+/wEAAAALABQAAAD+/wIAAAALABUAAAD//wEAAAAKABQAAAD//wIAAAAKABUAAAAAAAEAAAALABQAAAAAAAIAAAALABUAAAABAAEAAAAKABQAAAABAAIAAAAKABUAAAACAAEAAAALABQAAAACAAIAAAALABUAAAADAAEAAAAQABQAAAADAAIAAAAQABUAAAD7//z/AAACAAQAAAD7//7/AAACAAQAAAD7////AAACAAUAAAAGAPn/AAATAAIAAAAGAPr/AAATAAMAAAAGAPv/AAATABAAAAAGAPz/AAATABEAAAAGAP3/AAATABAAAAAGAP7/AAATAAQAAAAGAP//AAATAAUAAAAGAAAAAAATABEAAAAGAAEAAAARABQAAAAGAAIAAAARABUAAAAEAPn/AAALAAAAAAAEAPr/AAALAAEAAAAFAPn/AAAKAAAAAAAFAPr/AAAKAAEAAAAEAAEAAAALABQAAAAEAAIAAAALABUAAAAFAAEAAAAKABQAAAAFAAIAAAAKABUAAAA=")
@@ -1411,7 +1410,3 @@ y_sort_origin = 5
 
 [node name="PropTileMap" parent="." instance=ExtResource("2_wcrcd")]
 tile_map_data = PackedByteArray("AAD///3/AAAWAAwAAAD///7/AAAYAAwAAAACAP3/AAAWAAwAAAACAP7/AAAYAAwAAAAFAPv/AAACAAAAAAD8//v/AAAGABAAAAA=")
-
-[node name="Player" parent="." instance=ExtResource("3_8gvqa")]
-
-[node name="EnemyOne" parent="." instance=ExtResource("3_uepkp")]

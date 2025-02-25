@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=4 uid="uid://cyt0venvr1nge"]
 
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="1_jyor0"]
-[ext_resource type="PackedScene" uid="uid://cok3i1mn4wssr" path="res://Scenes/TileMapMain.tscn" id="2_gyjos"]
-[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://assets/tileset x1.png" id="3_b7qrn"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="1_jyor0"]
+[ext_resource type="PackedScene" uid="uid://cok3i1mn4wssr" path="res://scenes/TileMapMain.tscn" id="2_gyjos"]
+[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="3_b7qrn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0uw0"]
 texture = ExtResource("3_b7qrn")
@@ -1397,9 +1397,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_y0uw0")
 
 [node name="TreasureRoom2" type="Node2D"]
+position = Vector2(-15, 26)
 
 [node name="Props" parent="." instance=ExtResource("1_jyor0")]
-tile_map_data = PackedByteArray("AAD9//v/AAAaAAwAAAD///v/AAAaAAwAAAACAPv/AAAaAAwAAAAEAPv/AAAaAAwAAAD9//3/AAAcAAwAAAD///3/AAAcAAwAAAACAP3/AAAcAAwAAAAEAP3/AAAcAAwAAAD6//r/AAAUAAQAAAAHAPr/AAAUAAQAAAD7//3/AAAIAAIAAAAGAPz/AAAGAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9//v/AAAaAAwAAAACAPv/AAAaAAwAAAD6//r/AAAUAAQAAAAHAPr/AAAUAAQAAAD7//3/AAAIAAIAAAAGAPz/AAAGAAIAAAD///v/AAAcAAwAAAAEAPv/AAAcAAwAAAA=")
 
 [node name="Floor" parent="." instance=ExtResource("2_gyjos")]
 tile_map_data = PackedByteArray("AAD5//v/AABEAAIAAAD5//z/AABEAAMAAAD6//v/AABFAAIAAAD6//z/AABFAAMAAAD7//v/AABEAAIAAAD7//z/AABEAAMAAAD8//v/AABFAAIAAAD8//z/AABFAAMAAAD9//3/AABEAAIAAAD9//7/AABEAAMAAAD+//3/AABFAAIAAAD+//7/AABFAAMAAAD///3/AABEAAIAAAD///7/AABEAAMAAAAAAP3/AABFAAIAAAAAAP7/AABFAAMAAAABAP3/AABEAAIAAAABAP7/AABEAAMAAAACAP3/AABFAAIAAAACAP7/AABFAAMAAAADAP3/AABEAAIAAAADAP7/AABEAAMAAAAEAP3/AABFAAIAAAAEAP7/AABFAAMAAAAFAP3/AABEAAIAAAAFAP7/AABEAAMAAAAGAP3/AABFAAIAAAAGAP7/AABFAAMAAAD9//v/AABEAAIAAAD9//z/AABEAAMAAAD+//v/AABFAAIAAAD+//z/AABFAAMAAAD///v/AABEAAIAAAD///z/AABEAAMAAAAAAPv/AABFAAIAAAAAAPz/AABFAAMAAAABAPv/AABEAAIAAAABAPz/AABEAAMAAAACAPv/AABFAAIAAAACAPz/AABFAAMAAAADAPv/AABEAAIAAAADAPz/AABEAAMAAAAEAPv/AABFAAIAAAAEAPz/AABFAAMAAAAFAPv/AABEAAIAAAAFAPz/AABEAAMAAAAGAPv/AABFAAIAAAAGAPz/AABFAAMAAAAHAPv/AABEAAIAAAAHAPz/AABEAAMAAAAIAPv/AABFAAIAAAAIAPz/AABFAAMAAAAHAP3/AABEAAIAAAAHAP7/AABEAAMAAAAIAP3/AABFAAIAAAAIAP7/AABFAAMAAAD7//3/AABEAAIAAAD7//7/AABEAAMAAAD8//3/AABFAAIAAAD8//7/AABFAAMAAAD5//3/AABEAAIAAAD5//7/AABEAAMAAAD6//3/AABFAAIAAAD6//7/AABFAAMAAAA=")

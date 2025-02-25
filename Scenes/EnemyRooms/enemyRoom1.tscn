@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://bpepa2psed4wo"]
+[gd_scene load_steps=7 format=4 uid="uid://bpepa2psed4wo"]
 
-[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://assets/tileset x1.png" id="1_qlo07"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_h20b1"]
-[ext_resource type="PackedScene" uid="uid://cwa4pfelcafvg" path="res://Scenes/player.tscn" id="3_ehn8g"]
+[ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_qlo07"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_h20b1"]
 [ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Enemies/FloatBot.tscn" id="4_hn3cg"]
 [ext_resource type="PackedScene" uid="uid://knkacnhlar2r" path="res://Enemies/BigBot.tscn" id="5_0lkey"]
 
@@ -1399,6 +1398,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1f3ih")
 
 [node name="EnemyRoom1" type="Node2D"]
+position = Vector2(0, -43)
 
 [node name="Walls" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAPn/AAAKAAAAAAADAPr/AAAKAAEAAAD8//n/AAAZAAIAAAD8//r/AAAZAAMAAAD9//n/AAAKAAAAAAD9//r/AAAKAAEAAAD+//n/AAALAAAAAAD+//r/AAALAAEAAAABAPn/AAAKAAAAAAABAPr/AAAKAAEAAAACAPn/AAALAAAAAAACAPr/AAALAAEAAAD///n/AAAMAAAAAAD///r/AAAMAAEAAAAAAPn/AAAJAAAAAAAAAPr/AAAJAAEAAAAEAPn/AAALAAAAAAAEAPr/AAALAAEAAAAFAPn/AAAKAAAAAAAFAPr/AAAKAAEAAAD7//n/AAAKAAAAAAD7//r/AAAKAAEAAAD6//n/AAAJAAAAAAD6//r/AAAJAAEAAAD5//n/AAAEAAAAAAD5//r/AAAEAAEAAAAGAPn/AAARAAAAAAAGAPr/AAARAAEAAAD5//v/AAACAAQAAAD5//z/AAACAAUAAAD5//3/AAACAAQAAAD5//7/AAACAAUAAAD5////AAACAAQAAAD5/wAAAAACAAUAAAD5/wEAAAACAAQAAAD5/wIAAAACAAQAAAD5/wMAAAACAAUAAAAGAPv/AAATAAQAAAAGAPz/AAATAAUAAAAGAP3/AAATAAQAAAAGAP7/AAATAAUAAAAGAP//AAATAAQAAAAGAAAAAAATAAUAAAAGAAEAAAATAAQAAAAGAAIAAAATAAUAAAAGAAMAAAATAAQAAAAGAAQAAAATAAUAAAD5/wQAAAACAAQAAAD5/wUAAAAEABQAAAD6/wUAAAAFABQAAAD5/wYAAAAEABUAAAD6/wYAAAAFABUAAAD7/wUAAAAGABQAAAD7/wYAAAAGABUAAAD8/wUAAAAHABQAAAD8/wYAAAAHABUAAAD9/wUAAAAIABQAAAD9/wYAAAAIABUAAAD+/wUAAAAJABQAAAD+/wYAAAAJABUAAAD//wUAAAAGABQAAAD//wYAAAAGABUAAAAAAAUAAAAHABQAAAAAAAYAAAAHABUAAAABAAUAAAAIABQAAAABAAYAAAAIABUAAAACAAUAAAAJABQAAAACAAYAAAAJABUAAAADAAUAAAAGABQAAAADAAYAAAAGABUAAAAEAAUAAAAHABQAAAAEAAYAAAAHABUAAAAFAAUAAAAIABQAAAAFAAYAAAAIABUAAAAGAAUAAAARABQAAAAGAAYAAAARABUAAAA=")
@@ -1412,9 +1412,6 @@ y_sort_origin = 5
 
 [node name="PropTileMap" parent="." instance=ExtResource("2_h20b1")]
 tile_map_data = PackedByteArray("AAAFAPv/AAACAAAAAAAFAP3/AAAEABAAAAAFAAAAAAACAAwAAAAFAP//AAAAAAIAAAD8/wEAAAAAAAIAAAACAPz/AAACAAIAAAD6//v/AAAYABEAAAAFAAQAAAAYABEAAAD6/wMAAAAOAAQAAAA=")
-
-[node name="Player" parent="." groups=["player"] instance=ExtResource("3_ehn8g")]
-position = Vector2(3, 66)
 
 [node name="EnemyTwo" parent="." instance=ExtResource("5_0lkey")]
 position = Vector2(-29, -66)

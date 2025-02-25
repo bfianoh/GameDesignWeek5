@@ -17,7 +17,7 @@ var health: int = maxHealth
 var is_shooting: bool = false
 var is_alive: bool = true
 var coin_count: int = 0
-var ammo: int = 20
+var ammo: int = 50
 
 func _ready():
 	is_alive = true
