@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://p7nv2l585owl"]
 
-[ext_resource type="Script" path="res://Enemies/botRight.gd" id="1_u6nee"]
+[ext_resource type="Script" path="res://Enemies/float_bot.gd" id="1_u6nee"]
 [ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="2_oavpx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ukpid"]
@@ -167,7 +167,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfle"]
-size = Vector2(32, 32)
+size = Vector2(16, 21)
 
 [node name="EnemyOne" type="CharacterBody2D"]
 script = ExtResource("1_u6nee")
@@ -178,4 +178,5 @@ animation = &"death"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4.5)
 shape = SubResource("RectangleShape2D_tpfle")

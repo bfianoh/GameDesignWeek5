@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var move_speed = 50.0
 @export var health = 30
 
-var direction = Vector2.LEFT
+var direction = Vector2.RIGHT
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 

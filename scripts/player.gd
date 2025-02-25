@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player
+#class_name Player
 
 var player_projectile = preload("res://scenes/player_projectile.tscn")
 

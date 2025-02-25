@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=3 uid="uid://knkacnhlar2r"]
 
-[ext_resource type="Script" path="res://Enemies/bigbotRight.gd" id="1_1xvn6"]
+[ext_resource type="Script" path="res://Enemies/big_bot.gd" id="1_1xvn6"]
 [ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="2_gwsef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cguuq"]
@@ -261,7 +261,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgml5"]
-size = Vector2(32, 32)
+size = Vector2(21, 25)
 
 [node name="EnemyTwo" type="CharacterBody2D"]
 script = ExtResource("1_1xvn6")
@@ -272,4 +272,5 @@ animation = &"transform"
 autoplay = "idle_arms"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3.5)
 shape = SubResource("RectangleShape2D_vgml5")
