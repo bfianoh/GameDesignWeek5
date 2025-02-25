@@ -37,4 +37,5 @@ func take_damage(amount):
 func die():
 	sprite.play("death")
 	await sprite.animation_finished
+	sprite.stop() 
 	queue_free()

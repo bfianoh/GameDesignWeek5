@@ -158,7 +158,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ljeg")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -263,12 +263,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgml5"]
 size = Vector2(21, 25)
 
-[node name="EnemyTwo" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_1xvn6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tu6sy")
-animation = &"transform"
+animation = &"death"
 autoplay = "idle_arms"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
