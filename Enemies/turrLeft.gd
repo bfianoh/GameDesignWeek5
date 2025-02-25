@@ -8,7 +8,7 @@ var direction = Vector2.LEFT
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready():
-	sprite.play("idle")
+	sprite.play("active")
 
 func _physics_process(delta):
 	velocity = direction * move_speed

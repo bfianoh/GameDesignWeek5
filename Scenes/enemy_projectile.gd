@@ -26,6 +26,8 @@ func rotate_sprite():
 func _on_body_entered(body: Node2D) -> void:
 	if source == "FloatBot" and body is FloatBot:
 		return
+	if body.name == source:
+		return
 	# Add similar check for each enemy
 	
 	if body.has_method("take_damage"):

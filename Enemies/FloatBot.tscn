@@ -167,7 +167,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpfle"]
-size = Vector2(16, 21)
+size = Vector2(32, 32)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_u6nee")

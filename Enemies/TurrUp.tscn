@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://dfs87wlyv8yrx"]
+[gd_scene load_steps=23 format=3 uid="uid://cl7py3b80jqyn"]
 
-[ext_resource type="Script" path="res://Enemies/turrUp.gd" id="1_1n7pa"]
+[ext_resource type="Script" path="res://Enemies/turr_up.gd" id="1_vyydu"]
 [ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="2_256i0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wedd3"]
@@ -155,12 +155,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3fi6"]
 size = Vector2(11, 17)
 
-[node name="EnemyFour" type="CharacterBody2D"]
-script = ExtResource("1_1n7pa")
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_vyydu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gwsst")
-animation = &"shoot"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
