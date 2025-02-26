@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name EnemyFly
 
+signal enemy_defeated
+
 @export var move_speed: float = 50.0
 @export var health: int = 4
 
@@ -11,6 +13,7 @@ var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
 	sprite.play("idle")
+	add_to_group("enemy")
 	add_child(change_direction_timer)
 	change_direction_timer.wait_time = 4
 	change_direction_timer.one_shot = false
@@ -35,6 +38,7 @@ func take_damage(amount):
 	health -= amount
 	#print("EnemyFly took damage:", amount, "Remaining health:", health)
 	if health <= 0:
+		emit_signal("enemy_defeated")
 		die()
 
 func die():

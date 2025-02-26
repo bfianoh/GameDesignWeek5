@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name BigBot
 
+signal enemy_defeated
+
 @export var move_speed: float = 30.0
 @export var health: int = 30
 @export var detection_range: float = 50.0
@@ -13,6 +15,7 @@ var player: Node2D = null
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready():
+	add_to_group("enemy")
 	sprite.play("idle")
 	find_player()
 
@@ -56,6 +59,7 @@ func _on_body_entered(body: Node2D):
 func take_damage(amount):
 	health -= amount
 	if health <= 0:
+		emit_signal("enemy_defeated")
 		die()
 
 func die():

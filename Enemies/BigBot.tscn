@@ -263,7 +263,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgml5"]
 size = Vector2(21, 25)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_1xvn6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 class_name FloatBot
-
+signal enemy_defeated
 @export var health: int = 4  # health
 @export var fire_rate: float = 2.0  # time b/w shots
 @export var projectile_scene: PackedScene = preload("res://scenes/EnemyProjectile.tscn")
@@ -8,6 +8,7 @@ class_name FloatBot
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready():
+	add_to_group("enemy")
 	sprite.play("idle")
 	start_shooting()
 
@@ -33,6 +34,7 @@ func shoot():
 func take_damage(amount):
 	health -= amount
 	if health <= 0:
+		emit_signal("enemy_defeated")
 		die()
 
 func die():

@@ -155,7 +155,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8dq2"]
 size = Vector2(13, 17)
 
-[node name="TurrDown" type="CharacterBody2D"]
+[node name="TurrDown" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_o5e8k")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
