@@ -3,7 +3,7 @@ class_name BaseTurret
 
 @export var health: int = 4
 @export var fire_rate: float = 2.0
-@export var projectile_scene: PackedScene = preload("res://Scenes/EnemyProjectile.tscn")
+@export var projectile_scene: PackedScene = preload("res://scenes/EnemyProjectile.tscn")
 @export var shoot_direction: Vector2 = Vector2.ZERO
 
 @onready var sprite: AnimatedSprite2D = $Sprite

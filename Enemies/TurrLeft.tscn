@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://drap1yc5632oj"]
 
 [ext_resource type="Script" path="res://Enemies/turrLeft.gd" id="1_m63be"]
-[ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="2_bdo5j"]
+[ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://Assets/Enemies/enemies x1.png" id="2_bdo5j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k3jam"]
 atlas = ExtResource("2_bdo5j")

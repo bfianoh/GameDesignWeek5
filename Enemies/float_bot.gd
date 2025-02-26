@@ -3,7 +3,7 @@ class_name FloatBot
 
 @export var health: int = 4  # health
 @export var fire_rate: float = 2.0  # time b/w shots
-@export var projectile_scene: PackedScene = preload("res://Scenes/EnemyProjectile.tscn")
+@export var projectile_scene: PackedScene = preload("res://scenes/EnemyProjectile.tscn")
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 

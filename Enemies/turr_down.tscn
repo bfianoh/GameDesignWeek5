@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://boho5sj5uc4x8"]
 
-[ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://assets/Enemies/enemies x1.png" id="1_ksvl7"]
+[ext_resource type="Texture2D" uid="uid://bcasdo0vxdyv2" path="res://Assets/Enemies/enemies x1.png" id="1_ksvl7"]
 [ext_resource type="Script" path="res://Enemies/turr_down.gd" id="1_o5e8k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pbgif"]

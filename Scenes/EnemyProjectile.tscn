@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://xijwpvatfnw1"]
 
-[ext_resource type="Script" path="res://Scenes/enemy_projectile.gd" id="1_g7oue"]
-[ext_resource type="Texture2D" uid="uid://dnecjqikfa2td" path="res://assets/Projectiles/projectiles x1.png" id="1_ng2co"]
+[ext_resource type="Script" path="res://scenes/enemy_projectile.gd" id="1_l6uiv"]
+[ext_resource type="Texture2D" uid="uid://dnecjqikfa2td" path="res://Assets/Projectiles/projectiles x1.png" id="1_ng2co"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6lhdw"]
 atlas = ExtResource("1_ng2co")
@@ -69,7 +69,7 @@ animations = [{
 size = Vector2(8, 8)
 
 [node name="EnemyProjectile" type="Area2D"]
-script = ExtResource("1_g7oue")
+script = ExtResource("1_l6uiv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
