@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/treasureRoom.gd" id="1_7yhwn"]
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_uf3fm"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_wcrcd"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_wcrcd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_uf3fm")

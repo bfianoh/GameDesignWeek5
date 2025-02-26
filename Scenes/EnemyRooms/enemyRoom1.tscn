@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://bpepa2psed4wo"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_qlo07"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_h20b1"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_h20b1"]
 [ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Enemies/FloatBot.tscn" id="4_hn3cg"]
 [ext_resource type="PackedScene" uid="uid://knkacnhlar2r" path="res://Enemies/BigBot.tscn" id="5_0lkey"]
 

@@ -1,10 +1,11 @@
 extends Node2D
 
-#player
+# player
 @onready var player: Player = $Player
-#all rooms
+# all rooms
 var currentRoom = null
 var instanceOfRoom = null
+var starterRoom = preload("res://Scenes/starterRoom.tscn")
 var bossRoom = preload("res://scenes/BossRoom/bossFight.tscn")
 var enemyRoom1 = preload("res://scenes/EnemyRooms/enemyRoom1.tscn")
 var enemyRoom2 = preload("res://scenes/EnemyRooms/enemyRoom2.tscn")
@@ -16,69 +17,55 @@ var treasureRoom3 = preload("res://scenes/TreasureRooms/treasureRoom3.tscn")
 var treasureRoom4 = preload("res://scenes/TreasureRooms/treasureRoom4.tscn")
 var roomCount: int = 0
 
-#random number generator
+# random number generator
 var random = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	currentRoom = starterRoom
+	instanceOfRoom = currentRoom.instantiate()
+	add_child(instanceOfRoom)
+	player.position = Vector2(0, 0)
 
-func choseNextRoom(): 
-	#increase room count
+func choseNextRoom():
+	# Increase room count and reset player position.
 	roomCount += 1
 	print(roomCount)
-	#reset player postion
-	player.position = Vector2(0,0)
+	player.position = Vector2(0, 0)
+	
+	# Remove the current room.
+	instanceOfRoom.queue_free()
+	
+	# Check if it's time for the boss room.
 	if roomCount == 11:
-		instanceOfRoom.queue_free()
 		currentRoom = bossRoom
-		instanceOfRoom = currentRoom.instantiate()
-		add_child(instanceOfRoom)
-	elif currentRoom == null :
-		currentRoom = enemyRoom1
-		instanceOfRoom = currentRoom.instantiate()
-		add_child(instanceOfRoom)
 	else:
-		if currentRoom == enemyRoom1 or currentRoom == enemyRoom2 or currentRoom == enemyRoom3:
-			instanceOfRoom.queue_free()
-			var value: int = random.randi_range(1,4)
-			if value == 1:
-				currentRoom = treasureRoom1
-			elif value == 2:
-				currentRoom = treasureRoom2
-			elif value == 3:
-				currentRoom = treasureRoom3
-			elif value == 4:
-				currentRoom = treasureRoom4
-			instanceOfRoom = currentRoom.instantiate()
-			add_child(instanceOfRoom)
-		elif currentRoom == treasureRoom1 or currentRoom == treasureRoom2 or currentRoom == treasureRoom3 or currentRoom == treasureRoom4:
-			instanceOfRoom.queue_free()
-			#[RANDOMLY PICK NEXT ROOM]
-			var value: int = random.randi_range(1,4)
-			if value == 1:
-				currentRoom = shopRoom
-			elif value == 2:
-				currentRoom = enemyRoom1
-			elif value == 3:
-				currentRoom = enemyRoom2
-			elif value == 4:
-				currentRoom = enemyRoom3
-			instanceOfRoom = currentRoom.instantiate()
-			add_child(instanceOfRoom)
+		if currentRoom == starterRoom:
+			currentRoom = enemyRoom1
+		elif currentRoom in [enemyRoom1, enemyRoom2, enemyRoom3]:
+			var value: int = random.randi_range(1, 4)
+			match value:
+				1: currentRoom = treasureRoom1
+				2: currentRoom = treasureRoom2
+				3: currentRoom = treasureRoom3
+				4: currentRoom = treasureRoom4
+		elif currentRoom in [treasureRoom1, treasureRoom2, treasureRoom3, treasureRoom4]:
+			var value: int = random.randi_range(1, 4)
+			match value:
+				1: currentRoom = shopRoom
+				2: currentRoom = enemyRoom1
+				3: currentRoom = enemyRoom2
+				4: currentRoom = enemyRoom3
 		elif currentRoom == shopRoom:
-			instanceOfRoom.queue_free()
-			var value: int = random.randi_range(1,3)
-			if value == 1:
-				currentRoom = enemyRoom1
-			elif value == 2:
-				currentRoom = enemyRoom2
-			elif value == 3:
-				currentRoom = enemyRoom3
-			instanceOfRoom = currentRoom.instantiate()
-			add_child(instanceOfRoom)
+			var value: int = random.randi_range(1, 3)
+			match value:
+				1: currentRoom = enemyRoom1
+				2: currentRoom = enemyRoom2
+				3: currentRoom = enemyRoom3
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	instanceOfRoom = currentRoom.instantiate()
+	add_child(instanceOfRoom)
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("nextLevel"):
 		choseNextRoom()

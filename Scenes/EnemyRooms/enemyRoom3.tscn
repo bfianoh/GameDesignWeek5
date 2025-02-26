@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://copuunvxlugy4"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_j8pom"]
-[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://scenes/TileMapProps.tscn" id="2_tb3e5"]
+[ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_tb3e5"]
 [ext_resource type="PackedScene" uid="uid://knkacnhlar2r" path="res://Enemies/BigBot.tscn" id="4_532qf"]
 [ext_resource type="PackedScene" uid="uid://0kj2i8xwwi4w" path="res://Enemies/enemy_fly.tscn" id="5_f8q8m"]
 
