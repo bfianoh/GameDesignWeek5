@@ -209,6 +209,7 @@ size = Vector2(20, 14)
 
 [node name="EnemyFly" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_c40a8")
+health = 40
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_47jjr")

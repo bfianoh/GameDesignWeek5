@@ -265,6 +265,7 @@ size = Vector2(21, 25)
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_1xvn6")
+health = 60
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tu6sy")

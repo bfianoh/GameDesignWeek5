@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://diqf2ax8xs1lc"]
+
+[ext_resource type="Script" path="res://Boss/BossProjectile.gd" id="1_02rhm"]
+[ext_resource type="Texture2D" uid="uid://dnecjqikfa2td" path="res://Assets/Projectiles/projectiles x1.png" id="2_2m3lc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxnui"]
+atlas = ExtResource("2_2m3lc")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsgjr"]
+atlas = ExtResource("2_2m3lc")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8yjk"]
+atlas = ExtResource("2_2m3lc")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbjqe"]
+atlas = ExtResource("2_2m3lc")
+region = Rect2(96, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h68wx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxnui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsgjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8yjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbjqe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yapv"]
+size = Vector2(15, 9)
+
+[node name="boss_projectile" type="Area2D"]
+script = ExtResource("1_02rhm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_h68wx")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_5yapv")

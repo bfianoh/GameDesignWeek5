@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://di32kmvi8pb34"]
+
+[ext_resource type="Script" path="res://bossHealthUI.gd" id="1_ywyva"]
+
+[node name="Control" type="Control" groups=["boss_health_ui"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ywyva")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 200.0

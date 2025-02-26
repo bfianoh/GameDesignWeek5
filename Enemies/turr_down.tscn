@@ -157,6 +157,7 @@ size = Vector2(13, 17)
 
 [node name="TurrDown" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_o5e8k")
+health = 15
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nv2k7")
