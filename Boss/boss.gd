@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+var win_screen = preload("res://scenes/Menus/win_screen.tscn")
+
 @export var health: int = 200
 @export var speed: float = 50.0
 @export var fire_rate: float = 2.0
@@ -51,3 +53,10 @@ func update_health_ui():
 		
 func die():
 	queue_free()
+	# Pause the game
+	get_tree().paused = true
+
+	# Show the death screen
+	var win_screen_instance = win_screen.instantiate()
+	get_tree().root.add_child(win_screen_instance)
+	

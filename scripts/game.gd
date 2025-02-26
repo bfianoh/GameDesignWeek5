@@ -15,7 +15,9 @@ var treasureRoom1 = preload("res://scenes/TreasureRooms/treasureRoom1.tscn")
 var treasureRoom2 = preload("res://scenes/TreasureRooms/treasureRoom2.tscn")
 var treasureRoom3 = preload("res://scenes/TreasureRooms/treasureRoom3.tscn")
 var treasureRoom4 = preload("res://scenes/TreasureRooms/treasureRoom4.tscn")
+var death_screen = preload("res://scenes/Menus/death_screen.tscn")
 var roomCount: int = 0
+var paused: bool = false
 
 # Enemy tracking logic
 var enemy_count: int = 0
@@ -107,3 +109,7 @@ func choseNextRoom():
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("nextLevel"):
 		choseNextRoom()
+	if Input.is_action_just_pressed("pause"):
+		# Instantiate Death Screen (Add Later)
+		var death_screen_instance = death_screen.instantiate()
+		get_tree().root.add_child(death_screen_instance)

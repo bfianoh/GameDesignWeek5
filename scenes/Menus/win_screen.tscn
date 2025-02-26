@@ -13,6 +13,7 @@ bg_color = Color(0.219608, 0.717647, 0.392157, 1)
 [node name="WinScreen" type="CanvasLayer"]
 
 [node name="WinScreen" type="Control" parent="."]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

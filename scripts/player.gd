@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 var player_projectile = preload("res://scenes/player_projectile.tscn")
+var death_screen = preload("res://scenes/Menus/death_screen.tscn")
 
 @export var move_speed = 150.0
 @export var projectile_speed = 400
@@ -86,6 +87,8 @@ func die():
 	await %Sprite.animation_finished
 	get_tree().paused = true
 	# Instantiate Death Screen (Add Later)
+	var death_screen_instance = death_screen.instantiate()
+	get_tree().root.add_child(death_screen_instance)
 	
 func shop():
 	pass
