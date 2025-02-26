@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://dewxpdyjwvc4u"]
+
+[ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://assets/PixelOperator8.ttf" id="1_jls2t"]
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_trf3g"]
+[ext_resource type="FontFile" uid="uid://2mp4xbqlji6v" path="res://assets/8-bit-pusab.ttf" id="3_87fd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5ihw"]
+bg_color = Color(0.654902, 0.941176, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eugmo"]
+bg_color = Color(0.219608, 0.717647, 0.392157, 1)
+
+[node name="DeathScreen" type="CanvasLayer"]
+
+[node name="DeathScreen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_trf3g")
+
+[node name="ColorRect" type="ColorRect" parent="DeathScreen"]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.2, 0.235294, 0.341176, 0.784314)
+
+[node name="MarginContainer" type="MarginContainer" parent="DeathScreen"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 320.0
+offset_right = 752.0
+offset_bottom = 508.0
+theme_override_constants/separation = 50
+
+[node name="Retry" type="Button" parent="DeathScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("1_jls2t")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_d5ihw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eugmo")
+text = "Retry"
+
+[node name="MainMenu" type="Button" parent="DeathScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("1_jls2t")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_d5ihw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eugmo")
+text = "Main Menu
+"
+
+[node name="Label" type="Label" parent="DeathScreen"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 144.0
+offset_right = 960.0
+offset_bottom = 240.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_87fd3")
+theme_override_font_sizes/font_size = 50
+text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="DeathScreen/VBoxContainer/Retry" to="DeathScreen" method="_on_retry_pressed"]
+[connection signal="pressed" from="DeathScreen/VBoxContainer/MainMenu" to="DeathScreen" method="_on_main_menu_pressed"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw2sc3kj4eqf2"
-path="res://.godot/imported/boss outline x2.png-95ff7229db149662151ca9ebbac70f76.ctex"
+path="res://.godot/imported/boss outline x2.png-e64dcd281400966cb995d0c6ecf24a8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Boss/boss outline x2.png"
-dest_files=["res://.godot/imported/boss outline x2.png-95ff7229db149662151ca9ebbac70f76.ctex"]
+source_file="res://assets/Boss/boss outline x2.png"
+dest_files=["res://.godot/imported/boss outline x2.png-e64dcd281400966cb995d0c6ecf24a8c.ctex"]
 
 [params]
 

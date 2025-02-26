@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhe2dtcemmw7r"]
+
+[ext_resource type="Script" path="res://scripts/how_to_play.gd" id="1_odhu6"]
+[ext_resource type="FontFile" uid="uid://2mp4xbqlji6v" path="res://assets/8-bit-pusab.ttf" id="2_j30yn"]
+[ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://assets/PixelOperator8.ttf" id="3_2h603"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_665e6"]
+bg_color = Color(0.654902, 0.941176, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4qju"]
+bg_color = Color(0.219608, 0.717647, 0.392157, 1)
+
+[node name="HowToPlay" type="CanvasLayer"]
+
+[node name="HowToPlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_odhu6")
+
+[node name="ColorRect" type="ColorRect" parent="HowToPlay"]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.2, 0.235294, 0.341176, 1)
+
+[node name="Label" type="Label" parent="HowToPlay"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = 960.0
+offset_bottom = 128.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_j30yn")
+theme_override_font_sizes/font_size = 30
+text = "How to play:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="HowToPlay"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 152.0
+offset_right = 960.0
+offset_bottom = 523.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_2h603")
+theme_override_font_sizes/font_size = 30
+text = "You're stuck in a BioLab and need to eliminate all enemies in your path in order to break out!
+
+Collect coins, power-ups, ammo, and health to continue fighting and buy upgrades at the shop.
+
+[W][A][S][D] to move
+[Enter]/[Space] to shoot
+[E] to go to next level"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Back" type="Button" parent="HowToPlay"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 0
+offset_left = 40.0
+offset_top = 576.0
+offset_right = 143.0
+offset_bottom = 616.0
+theme_override_constants/outline_size = 10
+theme_override_constants/h_separation = 20
+theme_override_fonts/font = ExtResource("3_2h603")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover = SubResource("StyleBoxFlat_665e6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r4qju")
+text = "Back"
+
+[connection signal="pressed" from="HowToPlay/Back" to="HowToPlay" method="_on_back_pressed"]
