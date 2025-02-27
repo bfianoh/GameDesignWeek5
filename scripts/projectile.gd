@@ -24,7 +24,7 @@ func rotate_sprite():
 # SIGNALS
 
 func _on_body_entered(body: Node2D) -> void:
-	if source == "Player" and body is Player:
+	if body.name == source:
 		return
 	if source == "FloatBot" and body is FloatBot:
 		return

@@ -1397,7 +1397,7 @@ texture = ExtResource("1_3qmr7")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1f3ih")
 
-[node name="EnemyRoom3" type="Node2D"]
+[node name="bossFight" type="Node2D"]
 position = Vector2(57, 6)
 
 [node name="Walls" type="TileMapLayer" parent="." groups=["walls"]]
