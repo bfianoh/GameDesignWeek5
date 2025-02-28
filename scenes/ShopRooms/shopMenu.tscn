@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scripts/shopMenu.gd" id="1_86jcf"]
 [ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://Assets/PixelOperator8.ttf" id="1_e1y0x"]
 [ext_resource type="Texture2D" uid="uid://c4sbve2axamti" path="res://Assets/Props and Items/props and items x1.png" id="2_tiwaj"]
-[ext_resource type="PackedScene" uid="uid://darduropjv8ns" path="res://scenes/PickUps/ammo.tscn" id="5_4jrfy"]
-[ext_resource type="PackedScene" uid="uid://b7fr2fvifvenv" path="res://scenes/PickUps/healthPack.tscn" id="6_ohder"]
-[ext_resource type="PackedScene" uid="uid://dngqsu5jpeh5h" path="res://scenes/PickUps/weaponDamageUpgrade.tscn" id="7_fy7xd"]
-[ext_resource type="PackedScene" uid="uid://b42kavcsclhng" path="res://scenes/PickUps/weaponSpeedUpgrade.tscn" id="8_7ehkp"]
+[ext_resource type="PackedScene" uid="uid://darduropjv8ns" path="res://Scenes/PickUps/ammo.tscn" id="5_4jrfy"]
+[ext_resource type="PackedScene" uid="uid://b7fr2fvifvenv" path="res://Scenes/PickUps/healthPack.tscn" id="6_ohder"]
+[ext_resource type="PackedScene" uid="uid://dngqsu5jpeh5h" path="res://Scenes/PickUps/weaponDamageUpgrade.tscn" id="7_fy7xd"]
+[ext_resource type="PackedScene" uid="uid://b42kavcsclhng" path="res://Scenes/PickUps/weaponSpeedUpgrade.tscn" id="8_7ehkp"]
 
 [node name="ShopMenu" type="StaticBody2D"]
 position = Vector2(1, 1)

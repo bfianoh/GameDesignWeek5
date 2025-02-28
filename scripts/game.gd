@@ -21,6 +21,7 @@ var paused: bool = false
 
 var enemy_count: int = 0
 var enemies_eliminated: int = 0
+var enemy_spawn_timer: Timer
 
 var enemy_types = [
 	preload("res://Enemies/BigBot.tscn"),
@@ -37,6 +38,13 @@ func _ready() -> void:
 	currentRoom = starterRoom
 	instanceOfRoom = currentRoom.instantiate()
 	add_child(instanceOfRoom)
+	enemy_spawn_timer = Timer.new()
+	enemy_spawn_timer.wait_time = 2.0  # Spawns every 3 seconds
+	enemy_spawn_timer.autostart = false
+	enemy_spawn_timer.one_shot = false
+	enemy_spawn_timer.connect("timeout", Callable(self, "_spawn_boss_room_enemy"))
+	add_child(enemy_spawn_timer)
+
 	if player:
 		player.health_bar.visible = true
 		player.update_health_ui()
@@ -81,8 +89,9 @@ func choseNextRoom():
 
 	instanceOfRoom.queue_free()
 	
-	if roomCount == 11:
+	if roomCount == 10:
 		currentRoom = bossRoom
+		start_boss_room_spawning()
 	else:
 		if currentRoom == starterRoom:
 			currentRoom = enemyRoom1
@@ -139,6 +148,34 @@ func spawn_enemies(room_instance):
 		enemy_instance.connect("enemy_defeated", Callable(self, "_on_enemy_defeated"))
 
 	print("Spawned", num_enemies, "enemies in", room_instance.name)
+
+func start_boss_room_spawning():
+	print("Boss room started! Enemies will spawn every _ (1) seconds.")
+	enemy_spawn_timer.start()
+
+func _spawn_boss_room_enemy():
+	if currentRoom != bossRoom:
+		enemy_spawn_timer.stop()
+		return
+
+	var enemy_scene = enemy_types[random.randi_range(0, enemy_types.size() - 1)]
+	var enemy_instance = enemy_scene.instantiate()
+
+	var valid_position = false
+	var spawn_position = Vector2.ZERO
+
+	while not valid_position:
+		spawn_position = Vector2(
+			random.randi_range(-300, 300),
+			random.randi_range(-300, 300)
+		)
+		if spawn_position.distance_to(player.position) > 100:
+			valid_position = true
+
+	enemy_instance.position = spawn_position
+	instanceOfRoom.add_child(enemy_instance)
+
+	print("Spawned a random enemy at", spawn_position)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("nextLevel"):

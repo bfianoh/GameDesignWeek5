@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_h65ej"]
 [ext_resource type="Texture2D" uid="uid://drhg628evaemr" path="res://Assets/NPC/npc x1.png" id="2_sxux0"]
-[ext_resource type="PackedScene" uid="uid://d0l0l8ucovhks" path="res://scenes/ShopRooms/shopMenu.tscn" id="3_hpekd"]
+[ext_resource type="PackedScene" uid="uid://d0l0l8ucovhks" path="res://Scenes/ShopRooms/shopMenu.tscn" id="3_hpekd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6j2kr"]
 size = Vector2(17, 20)
