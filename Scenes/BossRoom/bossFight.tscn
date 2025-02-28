@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://xhmypwkna6ri"]
+[gd_scene load_steps=6 format=4 uid="uid://xhmypwkna6ri"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_3qmr7"]
 [ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_1pjpf"]
 [ext_resource type="PackedScene" uid="uid://dqdort3r8p1lk" path="res://Boss/boss.tscn" id="3_tf3ec"]
-[ext_resource type="PackedScene" uid="uid://cwa4pfelcafvg" path="res://Scenes/player.tscn" id="4_uwu3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_3qmr7")
@@ -1415,5 +1414,3 @@ tile_map_data = PackedByteArray("AAADAPD/AAAAAAgAAAAGAPD/AAAAAAoAAAAJAPD/AAAEAAg
 
 [node name="Boss" parent="." instance=ExtResource("3_tf3ec")]
 position = Vector2(247, -26)
-
-[node name="Player" parent="." instance=ExtResource("4_uwu3r")]

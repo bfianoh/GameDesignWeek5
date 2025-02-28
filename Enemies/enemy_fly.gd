@@ -19,7 +19,7 @@ func _ready():
 	change_direction_timer.one_shot = false
 	change_direction_timer.timeout.connect(_on_change_direction_timer_timeout)
 	change_direction_timer.start()
-	print("EnemyFly initialized. Starting direction:", direction)
+	#print("EnemyFly initialized. Starting direction:", direction)
 
 func _physics_process(delta):
 	velocity = direction * move_speed
@@ -32,7 +32,7 @@ func _physics_process(delta):
 
 func _on_change_direction_timer_timeout():
 	direction *= -1
-	print("EnemyFly changed direction:", direction)
+	#print("EnemyFly changed direction:", direction)
 
 func take_damage(amount):
 	health -= amount
@@ -42,7 +42,7 @@ func take_damage(amount):
 		die()
 
 func die():
-	print("EnemyFly dying...")
+	#print("EnemyFly dying...")
 	sprite.play("death")
 	await sprite.animation_finished
 	queue_free()

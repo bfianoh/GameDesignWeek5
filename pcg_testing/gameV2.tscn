@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://msx5shk0c5tw"]
+
+[ext_resource type="Script" path="res://pcg_testing/game_v_2.gd" id="1_g5f72"]
+[ext_resource type="PackedScene" uid="uid://cwa4pfelcafvg" path="res://Scenes/player.tscn" id="2_c80om"]
+
+[node name="GameV2" type="Node2D"]
+script = ExtResource("1_g5f72")
+
+[node name="Player" parent="." instance=ExtResource("2_c80om")]

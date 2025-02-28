@@ -13,9 +13,12 @@ func _ready():
 	start_shooting()
 
 func start_shooting():
-	while health > 0:
+	while health > 0 and is_inside_tree():  # Ensure node is still valid
 		await get_tree().create_timer(fire_rate).timeout
+		if not is_inside_tree():  # Avoid shooting if the node is removed
+			break
 		shoot()
+
 
 func shoot():
 	sprite.play("shoot")
