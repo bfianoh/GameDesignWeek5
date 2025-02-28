@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://bpepa2psed4wo"]
+[gd_scene load_steps=5 format=4 uid="uid://bpepa2psed4wo"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_qlo07"]
 [ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_h20b1"]
-[ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Enemies/FloatBot.tscn" id="4_hn3cg"]
-[ext_resource type="PackedScene" uid="uid://knkacnhlar2r" path="res://Enemies/BigBot.tscn" id="5_0lkey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_qlo07")
@@ -1413,8 +1411,17 @@ y_sort_origin = 5
 [node name="PropTileMap" parent="." instance=ExtResource("2_h20b1")]
 tile_map_data = PackedByteArray("AAAFAPv/AAACAAAAAAAFAP3/AAAEABAAAAAFAAAAAAACAAwAAAAFAP//AAAAAAIAAAD8/wEAAAAAAAIAAAACAPz/AAACAAIAAAD6//v/AAAYABEAAAAFAAQAAAAYABEAAAD6/wMAAAAOAAQAAAA=")
 
-[node name="EnemyTwo" parent="." instance=ExtResource("5_0lkey")]
-position = Vector2(-29, -66)
+[node name="EnemySpawnPoint1" type="Marker2D" parent="."]
+position = Vector2(-85, 32)
 
-[node name="EnemyOne" parent="." instance=ExtResource("4_hn3cg")]
-position = Vector2(-88, 34)
+[node name="EnemySpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(-32, -64)
+
+[node name="EnemySpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(61, 61)
+
+[node name="EnemySpawnPoint4" type="Marker2D" parent="."]
+position = Vector2(3, 61)
+
+[node name="EnemySpawnPoint5" type="Marker2D" parent="."]
+position = Vector2(48, -10)

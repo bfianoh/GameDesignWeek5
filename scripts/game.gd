@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var player: Player = $Player
 
-# all rooms
+# All rooms
 var currentRoom = null
 var instanceOfRoom = null
 var starterRoom = preload("res://Scenes/starterRoom.tscn")
@@ -19,9 +19,17 @@ var death_screen = preload("res://scenes/Menus/death_screen.tscn")
 var roomCount: int = 0
 var paused: bool = false
 
-# Enemy tracking logic
 var enemy_count: int = 0
 var enemies_eliminated: int = 0
+
+var enemy_types = [
+	preload("res://Enemies/BigBot.tscn"),
+	preload("res://Enemies/FloatBot.tscn"),
+	preload("res://Enemies/enemy_fly.tscn"),
+	preload("res://Enemies/TurrUp.tscn"),
+	preload("res://Enemies/TurrLeft.tscn"),
+	preload("res://Enemies/turr_down.tscn")
+]
 
 var random = RandomNumberGenerator.new()
 
@@ -34,11 +42,9 @@ func _ready() -> void:
 		player.update_health_ui()
 	player.position = Vector2(0, 0)
 
-	# Check for enemies when room starts based on enemy group
 	check_enemy_status()
 
 func check_enemy_status():
-	# skip enemy counting in shop or treasure rooms
 	if currentRoom in [shopRoom, treasureRoom1, treasureRoom2, treasureRoom3, treasureRoom4]:
 		enemy_count = 0
 		enemies_eliminated = 0
@@ -48,7 +54,6 @@ func check_enemy_status():
 	enemy_count = 0
 	enemies_eliminated = 0
 	
-	# Get all enemies in the "enemy" group
 	var enemies = get_tree().get_nodes_in_group("enemy")
 	
 	for enemy in enemies:
@@ -76,7 +81,6 @@ func choseNextRoom():
 
 	instanceOfRoom.queue_free()
 	
-	# Check if it's time for the boss room
 	if roomCount == 11:
 		currentRoom = bossRoom
 	else:
@@ -105,14 +109,40 @@ func choseNextRoom():
 
 	instanceOfRoom = currentRoom.instantiate()
 	add_child(instanceOfRoom)
+	if currentRoom not in [shopRoom, treasureRoom1, treasureRoom2, treasureRoom3, treasureRoom4]:
+		spawn_enemies(instanceOfRoom)
 
-	# re-check for enemies in the new room
+
 	check_enemy_status()
+
+func spawn_enemies(room_instance):
+	var spawn_points = []
+	for child in room_instance.get_children():
+		if child is Marker2D and child.name.begins_with("EnemySpawnPoint"):
+			spawn_points.append(child)
+
+	if spawn_points.is_empty():
+		print("No spawn points found in room:", room_instance.name)
+		return
+
+	var num_enemies = random.randi_range(1, spawn_points.size())
+
+	for i in range(num_enemies):
+		var enemy_scene = enemy_types[random.randi_range(0, enemy_types.size() - 1)]
+		var enemy_instance = enemy_scene.instantiate()
+
+		var spawn_point = spawn_points.pop_at(random.randi_range(0, spawn_points.size() - 1))
+		enemy_instance.position = spawn_point.position
+
+		room_instance.add_child(enemy_instance)
+
+		enemy_instance.connect("enemy_defeated", Callable(self, "_on_enemy_defeated"))
+
+	print("Spawned", num_enemies, "enemies in", room_instance.name)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("nextLevel"):
 		choseNextRoom()
 	if Input.is_action_just_pressed("pause"):
-		# Instantiate Death Screen (Add Later)
 		var death_screen_instance = death_screen.instantiate()
 		get_tree().root.add_child(death_screen_instance)

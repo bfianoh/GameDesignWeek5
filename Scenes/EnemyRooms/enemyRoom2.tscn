@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://bk6fwlv6sbsg7"]
+[gd_scene load_steps=7 format=4 uid="uid://bk6fwlv6sbsg7"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_cuxbe"]
 [ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_nou6r"]
 [ext_resource type="PackedScene" uid="uid://cl7py3b80jqyn" path="res://Enemies/TurrUp.tscn" id="4_d4xgb"]
 [ext_resource type="PackedScene" uid="uid://boho5sj5uc4x8" path="res://Enemies/turr_down.tscn" id="5_fjowj"]
-[ext_resource type="PackedScene" uid="uid://p7nv2l585owl" path="res://Enemies/FloatBot.tscn" id="5_fvyml"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_cuxbe")
@@ -1413,9 +1412,6 @@ y_sort_origin = 5
 
 [node name="PropTileMap" parent="." instance=ExtResource("2_nou6r")]
 
-[node name="Enemy" parent="." instance=ExtResource("5_fvyml")]
-position = Vector2(-90, 43)
-
 [node name="Enemy2" parent="." instance=ExtResource("4_d4xgb")]
 position = Vector2(-6, 68)
 
@@ -1430,3 +1426,9 @@ position = Vector2(233, -67)
 
 [node name="TurrDown2" parent="." instance=ExtResource("5_fjowj")]
 position = Vector2(72, -68)
+
+[node name="EnemySpawnPoint1" type="Marker2D" parent="."]
+position = Vector2(362, -65)
+
+[node name="EnemySpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(-73, 57)

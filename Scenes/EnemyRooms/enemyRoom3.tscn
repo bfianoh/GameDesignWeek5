@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://copuunvxlugy4"]
+[gd_scene load_steps=5 format=4 uid="uid://copuunvxlugy4"]
 
 [ext_resource type="Texture2D" uid="uid://byxjer128bk33" path="res://Assets/tileset x1.png" id="1_j8pom"]
 [ext_resource type="PackedScene" uid="uid://e15tq433monp" path="res://Scenes/TileMapProps.tscn" id="2_tb3e5"]
-[ext_resource type="PackedScene" uid="uid://knkacnhlar2r" path="res://Enemies/BigBot.tscn" id="4_532qf"]
-[ext_resource type="PackedScene" uid="uid://0kj2i8xwwi4w" path="res://Enemies/enemy_fly.tscn" id="5_f8q8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1f3ih"]
 texture = ExtResource("1_j8pom")
@@ -1413,20 +1411,47 @@ y_sort_origin = 5
 [node name="PropTileMap" parent="." instance=ExtResource("2_tb3e5")]
 tile_map_data = PackedByteArray("AAAYAPL/AAAWAAoAAAAaAPL/AAAYAAoAAAADAPD/AAAAAAgAAAAGAPD/AAAAAAgAAAAJAPD/AAAEAAgAAAAMAPD/AAAMAAgAAAAPAPD/AAAMAAgAAAASAPD/AAAMAAgAAAAVAPD/AAAMAAgAAAAcAPL/AAAOAAQAAAACAPL/AAAaAAQAAAAcAPX/AAAaAAMAAAAWAPL/AAAcAAMAAAAaAPT/AAAaAAwAAAAEAPL/AAAcAA4AAAANAPT/AAAcAA4AAAARAPz/AAAAAAwAAAATAPz/AAACAAwAAAAVAPz/AAAEAAwAAAAXAPz/AAAGAAwAAAAXAP//AAAEABAAAAAXAAEAAAAGABAAAAAXAP7/AAAAABAAAAAXAAAAAAAAABAAAAAXAAMAAAAAABQAAAALAPT/AAAAABQAAAAEAPj/AAACACYAAAA=")
 
-[node name="Enemy" parent="." instance=ExtResource("4_532qf")]
-position = Vector2(186, -208)
+[node name="EnemySpawnPoint1" type="Marker2D" parent="."]
+position = Vector2(359, -181)
 
-[node name="EnemyFly" parent="." instance=ExtResource("5_f8q8m")]
-position = Vector2(164, 145)
+[node name="EnemySpawnPoint8" type="Marker2D" parent="."]
+position = Vector2(267, -197)
 
-[node name="EnemyFly2" parent="." instance=ExtResource("5_f8q8m")]
-position = Vector2(165, 220)
+[node name="EnemySpawnPoint9" type="Marker2D" parent="."]
+position = Vector2(119, -192)
 
-[node name="EnemyFly3" parent="." instance=ExtResource("5_f8q8m")]
-position = Vector2(166, 288)
+[node name="EnemySpawnPoint2" type="Marker2D" parent="."]
+position = Vector2(291, -15)
 
-[node name="Enemy2" parent="." instance=ExtResource("4_532qf")]
-position = Vector2(337, 184)
+[node name="EnemySpawnPoint3" type="Marker2D" parent="."]
+position = Vector2(320, 32)
 
-[node name="EnemyFly4" parent="." instance=ExtResource("5_f8q8m")]
-position = Vector2(167, 354)
+[node name="EnemySpawnPoint4" type="Marker2D" parent="."]
+position = Vector2(191, 157)
+
+[node name="EnemySpawnPoint5" type="Marker2D" parent="."]
+position = Vector2(165, 224)
+
+[node name="EnemySpawnPoint6" type="Marker2D" parent="."]
+position = Vector2(319, 129)
+
+[node name="EnemySpawnPoint7" type="Marker2D" parent="."]
+position = Vector2(193, 383)
+
+[node name="EnemySpawnPoint10" type="Marker2D" parent="."]
+position = Vector2(321, 352)
+
+[node name="EnemySpawnPoint11" type="Marker2D" parent="."]
+position = Vector2(288, 286)
+
+[node name="EnemySpawnPoint12" type="Marker2D" parent="."]
+position = Vector2(192, 320)
+
+[node name="EnemySpawnPoint13" type="Marker2D" parent="."]
+position = Vector2(349, 192)
+
+[node name="EnemySpawnPoint14" type="Marker2D" parent="."]
+position = Vector2(166, 258)
+
+[node name="EnemySpawnPoint15" type="Marker2D" parent="."]
+position = Vector2(224, 49)
