@@ -2,21 +2,25 @@ extends CharacterBody2D
 
 var win_screen = preload("res://scenes/Menus/win_screen.tscn")
 
-@export var health: int = 200
+@export var maxHealth: int = 200
 @export var speed: float = 50.0
 @export var fire_rate: float = 2.0
 @export var projectile_scene: PackedScene = preload("res://Boss/BossProjectile.tscn")
 
 @onready var sprite: AnimatedSprite2D = $Sprite
-
+@onready var health_bar: ProgressBar = $HealthBar
 
 var ui_health_bar = null
 var player = null
 var shoot_timer = null
+var health: int = maxHealth
 
 func _ready():
 	player = get_tree().get_first_node_in_group("player")  
 	start_shooting_timer()
+	health = maxHealth
+	if health_bar:
+		health_bar.visible = true
 	update_health_ui()
 	add_to_group("boss")
 
@@ -24,6 +28,8 @@ func _physics_process(delta):
 	if player:
 		move_towards_player(delta)
 		avoid_collisions()
+	if health_bar:
+		health_bar.global_position = global_position + Vector2(-10, -30)
 
 func move_towards_player(delta):
 	if player:
@@ -69,10 +75,10 @@ func take_damage(amount):
 	update_health_ui()
 	if health <= 0:
 		die()
-		
+
 func update_health_ui():
-	if ui_health_bar:
-		ui_health_bar.set_health(health)
+	if health_bar:
+		health_bar.value = health
 		
 func die():
 	queue_free()
