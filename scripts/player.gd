@@ -12,6 +12,8 @@ var death_screen = preload("res://scenes/Menus/death_screen.tscn")
 @export var health_ui_label_node: Label = null
 @export var maxHealth: int = 100
 
+@onready var health_bar: ProgressBar = $HealthBar
+
 var move_dir: Vector2
 var facing_dir: Vector2 = Vector2.RIGHT
 var health: int = maxHealth
@@ -23,29 +25,30 @@ var ammo: int = 50
 func _ready():
 	is_alive = true
 	health = maxHealth
+	if health_bar:
+		health_bar.visible = true
+	update_health_ui()
 
 func _physics_process(delta: float) -> void:
 	if is_alive:
-		# Movement
 		move_dir.x = Input.get_axis("left", "right")
 		move_dir.y = Input.get_axis("up", "down")
 		move_dir = move_dir.normalized()
 		
 		if move_dir != Vector2.ZERO:
 			facing_dir = move_dir
-		
-		# flip
+
 		if move_dir.x > 0: %Sprite.flip_h = false
 		elif move_dir.x < 0: %Sprite.flip_h = true
 		
-		# Apply movement
 		velocity = move_dir * move_speed
 		move_and_slide()
 
-		# Prevent sticking by applying a push force if colliding with the boss
 		handle_collisions()
+		
+		if health_bar:
+			health_bar.global_position = global_position + Vector2(-5, -10)
 
-		# Play animations
 		if is_shooting:
 			%Sprite.play("shoot")
 		elif move_dir:
@@ -53,7 +56,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			%Sprite.play("idle")
 		
-		# Shoot
 		if Input.is_action_just_pressed("shoot"):
 			if !is_shooting:
 				shoot()
@@ -63,7 +65,7 @@ func handle_collisions():
 		var collision = get_slide_collision(i)
 		if collision.get_collider().is_in_group("boss"):
 			var push_direction = (global_position - collision.get_collider().global_position).normalized()
-			global_position += push_direction * 5  # Adjust push strength as needed
+			global_position += push_direction * 5
 
 func shoot():
 	if ammo == 0:
@@ -86,8 +88,13 @@ func shoot():
 
 func take_damage(value: int):
 	health -= value
+	update_health_ui()
 	if health <= 0:
 		die()
+
+func update_health_ui():
+	if health_bar:
+		health_bar.value = health
 
 func die():
 	is_alive = false

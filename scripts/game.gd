@@ -29,6 +29,9 @@ func _ready() -> void:
 	currentRoom = starterRoom
 	instanceOfRoom = currentRoom.instantiate()
 	add_child(instanceOfRoom)
+	if player:
+		player.health_bar.visible = true
+		player.update_health_ui()
 	player.position = Vector2(0, 0)
 
 	# Check for enemies when room starts based on enemy group
