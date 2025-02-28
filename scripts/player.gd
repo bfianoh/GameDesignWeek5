@@ -38,12 +38,14 @@ func _physics_process(delta: float) -> void:
 		if move_dir.x > 0: %Sprite.flip_h = false
 		elif move_dir.x < 0: %Sprite.flip_h = true
 		
-		if move_dir:
-			velocity = move_dir * move_speed
-		else:
-			velocity = velocity.move_toward(Vector2.ZERO, move_speed)
+		# Apply movement
+		velocity = move_dir * move_speed
 		move_and_slide()
-		
+
+		# Prevent sticking by applying a push force if colliding with the boss
+		handle_collisions()
+
+		# Play animations
 		if is_shooting:
 			%Sprite.play("shoot")
 		elif move_dir:
@@ -55,6 +57,13 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("shoot"):
 			if !is_shooting:
 				shoot()
+
+func handle_collisions():
+	for i in range(get_slide_collision_count()):
+		var collision = get_slide_collision(i)
+		if collision.get_collider().is_in_group("boss"):
+			var push_direction = (global_position - collision.get_collider().global_position).normalized()
+			global_position += push_direction * 5  # Adjust push strength as needed
 
 func shoot():
 	if ammo == 0:
@@ -77,7 +86,6 @@ func shoot():
 
 func take_damage(value: int):
 	health -= value
-	# health_ui_label_node.text = str(health) #EDIT LATER
 	if health <= 0:
 		die()
 
@@ -86,9 +94,5 @@ func die():
 	%Sprite.play("death")
 	await %Sprite.animation_finished
 	get_tree().paused = true
-	# Instantiate Death Screen (Add Later)
 	var death_screen_instance = death_screen.instantiate()
 	get_tree().root.add_child(death_screen_instance)
-	
-func shop():
-	pass

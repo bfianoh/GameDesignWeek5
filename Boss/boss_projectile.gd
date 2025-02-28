@@ -1,11 +1,11 @@
 extends Area2D
-class_name BossProjectile  # Changed from Projectile to BossProjectile
+class_name BossProjectile
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 @export var speed: float = 200.0
 var direction = Vector2.ZERO
-var damage = 1
-var source: String = "Boss"  # Explicitly set source
+var damage = 20
+var source: String = "Boss"
 
 func _ready() -> void:
 	sprite.play("default")
@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(delta):
 	if direction != Vector2.ZERO:
-		position += direction * speed * delta  # Moves the projectile forward
+		position += direction * speed * delta
 
 func set_direction(new_direction: Vector2):
 	direction = new_direction.normalized()

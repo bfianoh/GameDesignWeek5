@@ -21,6 +21,7 @@ player=""
 walls=""
 enemy=""
 boss_health_ui=""
+boss=""
 
 [input]
 

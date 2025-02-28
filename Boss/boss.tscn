@@ -272,12 +272,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6qsk"]
 size = Vector2(55, 48)
 
-[node name="Boss" type="CharacterBody2D" groups=["enemy"]]
+[node name="Boss" type="CharacterBody2D" groups=["boss", "enemy"]]
 script = ExtResource("1_ed02g")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_huwh4")
-animation = &"death"
+animation = &"shoot"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
