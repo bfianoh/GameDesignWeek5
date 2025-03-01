@@ -7,3 +7,5 @@
 script = ExtResource("1_3bamd")
 
 [node name="Player" parent="." instance=ExtResource("2_gjhtm")]
+
+[node name="UIStatsLabel" type="CanvasLayer" parent="."]
