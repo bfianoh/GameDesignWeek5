@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cenlcqwtlieof"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_mn0hu"]
-[ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://Assets/PixelOperator8.ttf" id="2_i7oee"]
-[ext_resource type="FontFile" uid="uid://2mp4xbqlji6v" path="res://Assets/8-bit-pusab.ttf" id="3_t0qyl"]
-[ext_resource type="Texture2D" uid="uid://ccitvnmtbny6m" path="res://Assets/background.png" id="4_6fnbt"]
+[ext_resource type="FontFile" uid="uid://bbpi33mwoxofs" path="res://assets/PixelOperator8.ttf" id="2_i7oee"]
+[ext_resource type="FontFile" uid="uid://2mp4xbqlji6v" path="res://assets/8-bit-pusab.ttf" id="3_t0qyl"]
+[ext_resource type="Texture2D" uid="uid://ccitvnmtbny6m" path="res://assets/background.png" id="4_6fnbt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un76l"]
 bg_color = Color(0.654902, 0.941176, 0.439216, 1)
@@ -24,6 +24,7 @@ script = ExtResource("1_mn0hu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
+offset_left = -1.0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("4_6fnbt")
@@ -89,7 +90,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 325)
+position = Vector2(575, 324)
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/How to play" to="." method="_on_how_to_play_pressed"]

@@ -9,12 +9,14 @@ signal enemy_defeated
 @export var stop_distance: float = 20.0 
 @export var push_force: float = 5.0
 @export var damage: int = 10
+var is_alive: bool = true
 
 var player: Node2D = null
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 
 func _ready():
+	is_alive = true
 	add_to_group("enemy")
 	sprite.play("idle")
 	find_player()
@@ -58,17 +60,16 @@ func _on_body_entered(body: Node2D):
 
 func take_damage(amount):
 	health -= amount
-	if health <= 0:
-		emit_signal("enemy_defeated")
+	if health <= 0 and is_alive:
 		die()
 
 func die():
+	is_alive = false
 	# stopping all movement and actions for player & enemy
 	set_physics_process(false)
 	player = null
 	velocity = Vector2.ZERO
 	sprite.play("death")
-
-	await sprite.animation_finished 
-	sprite.stop() 
+	await sprite.animation_finished
+	emit_signal("enemy_defeated")
 	queue_free()

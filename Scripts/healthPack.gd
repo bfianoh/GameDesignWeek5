@@ -8,4 +8,6 @@ func _on_body_entered(body: Node2D) -> void:
 
 func purchase(body):
 	body.health += 20
+	if body.has_method("update_health_ui"):
+		body.update_health_ui()
 	print(body.health)

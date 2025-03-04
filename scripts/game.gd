@@ -5,7 +5,7 @@ extends Node2D
 # All rooms
 var currentRoom = null
 var instanceOfRoom = null
-var starterRoom = preload("res://Scenes/starterRoom.tscn")
+var starterRoom = preload("res://scenes/starterRoom.tscn")
 var bossRoom = preload("res://scenes/BossRoom/bossFight.tscn")
 var enemyRoom1 = preload("res://scenes/EnemyRooms/enemyRoom1.tscn")
 var enemyRoom2 = preload("res://scenes/EnemyRooms/enemyRoom2.tscn")

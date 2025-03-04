@@ -103,3 +103,6 @@ func die():
 	get_tree().paused = true
 	var death_screen_instance = death_screen.instantiate()
 	get_tree().root.add_child(death_screen_instance)
+	
+func shop():
+	pass

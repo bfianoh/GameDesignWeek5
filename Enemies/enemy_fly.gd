@@ -7,11 +7,13 @@ signal enemy_defeated
 @export var health: int = 4
 
 var direction: Vector2 = Vector2.RIGHT
+var is_alive: bool = true
 
 @onready var sprite: AnimatedSprite2D = $Sprite
 @onready var change_direction_timer: Timer = Timer.new()
 
 func _ready():
+	is_alive = true
 	sprite.play("idle")
 	add_to_group("enemy")
 	add_child(change_direction_timer)
@@ -37,12 +39,14 @@ func _on_change_direction_timer_timeout():
 func take_damage(amount):
 	health -= amount
 	#print("EnemyFly took damage:", amount, "Remaining health:", health)
-	if health <= 0:
-		emit_signal("enemy_defeated")
+	if health <= 0 and is_alive:
 		die()
 
 func die():
+	is_alive = false
 	print("EnemyFly dying...")
+	set_physics_process(false)
 	sprite.play("death")
 	await sprite.animation_finished
+	emit_signal("enemy_defeated")
 	queue_free()
